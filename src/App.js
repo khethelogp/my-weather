@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import Location from './Location';
 import DailyFocust from './DailyFocust';
-import TodaysCondition from './TodaysCondition';
 
 const api = {
   key: "d4b88f832947932fedb5238b37a19012",
@@ -34,9 +33,10 @@ const App = () => {
     setQuery(search);
     setSearch('');
   }
-
-  console.log(weather);
   
+
+
+
   return (
     <div className="app">
       <main>
@@ -54,9 +54,8 @@ const App = () => {
                         onChange={updateSearch}
                       />
               
-                      <button type="submit">
-                        <i className="fas fa-search"></i>
-                        <ion-icon name="search-outline"></ion-icon>
+                      <button type="submit" title="search">
+                        <i class="bi bi-search"></i>
                       </button>   
                   </form>
                 </div>
@@ -68,22 +67,67 @@ const App = () => {
                     temp={weather.main.temp}
                     description={weather.weather[0].main}
                 />}
-
-                {/* (typeof weather.main != "undefined") ? (
-                  <div>
-                    <Location 
-                      key={weather.weather.id}
-                      city={weather.name}
-                      country={weather.sys.country}
-                      temp={weather.main.temp}
-                      description={weather.weather[0].description}
-                    />
-                  </div>
-                ):('') */}
                 
                 <DailyFocust />
 
-                <TodaysCondition />
+                <div className="todays-condition">
+                    <h2>Today's Weather Condition</h2>
+                    <div className="condition">
+                        <h4>Humidity</h4>
+                        <h4>{weather.main.humidity}%</h4>
+                    </div>
+                    <div className="condition">
+                        <h4>Feels Like</h4>
+                        <h4>{Math.round(weather.main.feels_like)}°C</h4>
+                    </div>
+                    <div className="condition">
+                        <h4>Min Temp</h4>
+                        <h4>{Math.round(weather.main.temp_min)}°C</h4>
+                    </div>
+                    <div className="condition">
+                        <h4>Max Temp</h4>
+                        <h4>{Math.round(weather.main.temp_max)}°C</h4>
+                    </div>
+                    <div className="condition">
+                        <h4>Condition</h4>
+                        <h4>{weather.weather[0].description}</h4>
+                    </div>
+                    <div className="condition">
+                        <h4>Wind Direction</h4>
+                        <h4>{weather.wind.deg}</h4>
+                    </div>
+                        <div className="condition">
+                        <h4>Wind Speed</h4>
+                        <h4>{weather.wind.speed} km/h</h4>
+                    </div>
+                    <div className="condition">
+                        <h4>Pressure</h4>
+                        <h4>{weather.main.pressure}</h4>
+                    </div>
+                    <div className="condition">
+                        <h4>Sunrise</h4>
+                        <h4>{weather.sys.sunrise}</h4>
+                    </div>
+                    <div className="condition">
+                        <h4>Sunset</h4>
+                        <h4>{weather.sys.sunrise}</h4>
+                    </div>
+                </div>
+              
+              {/*  {weather.main && <TodaysCondition 
+                    key={weather.weather.id}
+                    humidity={weather.main.humidity}
+                    feels={weather.main.feels_like}
+                    minTemp={weather.main.temp_min}
+                    maxTemp={weather.main.temp_max}
+                    condition={weather.weather[0].description}
+                    windDirection={weather.wind.deg}
+                    windSpeed={weather.wind.speed} 
+                    pressure={weather.main.pressure}
+                    sunrise={weather.sys.sunrise}
+                    sunset={weather.sys.sunset}
+                />} */}
+
             </div>  
         </div>
       </main>    
