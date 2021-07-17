@@ -1,53 +1,92 @@
-import React, {useEffect, useState} from 'react';
-import './App.css';
+import React, { useState, useEffect } from 'react';
 
-import SearchBar from './SearchBar';
 import Location from './Location';
 import DailyFocust from './DailyFocust';
 import TodaysCondition from './TodaysCondition';
 
-const App = () => {
-  const APP_ID = "d4b88f832947932fedb5238b37a19012";
+const api = {
+  key: "d4b88f832947932fedb5238b37a19012",
+  base: "https://api.openweathermap.org/data/2.5/"
+}
 
-  const [weather, setWeather] = useState([]);
+const App = () => {
+  const [weather, setWeather] = useState({});
   const [search, setSearch] = useState('');
-  const [location, setLocation] = useState(''); 
-  
+  const [query, setQuery] = useState('Pretoria');
+
   useEffect(()=>{
     getWeather();
-  },[location]);
+  },[query]);
 
   const getWeather = async () => {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Pretoria,za&APPID=d4b88f832947932fedb5238b37a19012`)
+    const response = await 
+    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     const data = await response.json();
-    setWeather(data.weather);
-    console.log(data.weather);
-};
+    setWeather(data);
+  };
 
-const updateSearch = e => {
+  const updateSearch = e => {
     setSearch(e.target.value);
-}
+  }
 
-const getSearch = e => {
-  e.preventDefault();
-  setLocation(search);
-  setSearch('');
-}
+  const getSearch = e => {
+    e.preventDefault();
+    setQuery(search);
+    setSearch('');
+  }
 
-return (
-    <div className="App">
+  console.log(weather);
+  
+  return (
+    <div className="app">
+      <main>
         <div className="container">
             <div className="grid-wrapper">
 
-                <SearchBar />
+                <div className="searchBar">
+                  <form className="search-form"
+                    onSubmit={getSearch}>
+                      <input 
+                        className="search-bar" 
+                        type="text" 
+                        placeholder="Enter a Town or City"
+                        value={search}
+                        onChange={updateSearch}
+                      />
+              
+                      <button type="submit">
+                        <i className="fas fa-search"></i>
+                        <ion-icon name="search-outline"></ion-icon>
+                      </button>   
+                  </form>
+                </div>
 
-                <Location />
+                {weather.main && <Location 
+                    key={weather.weather.id}
+                    city={weather.name}
+                    country={weather.sys.country}
+                    temp={weather.main.temp}
+                    description={weather.weather[0].main}
+                />}
+
+                {/* (typeof weather.main != "undefined") ? (
+                  <div>
+                    <Location 
+                      key={weather.weather.id}
+                      city={weather.name}
+                      country={weather.sys.country}
+                      temp={weather.main.temp}
+                      description={weather.weather[0].description}
+                    />
+                  </div>
+                ):('') */}
                 
                 <DailyFocust />
 
                 <TodaysCondition />
             </div>  
-        </div>    
+        </div>
+      </main>    
     </div>
   );
 }
