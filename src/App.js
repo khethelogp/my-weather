@@ -4,7 +4,7 @@ import Location from './Location';
 import DailyFocust from './DailyFocust';
 
 const api = {
-  key: "d4b88f832947932fedb5238b37a19012",
+  key: "ccc62bdb7a2967c2cfdfa36001161aed",
   base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -38,7 +38,7 @@ const App = () => {
 
 
   return (
-    <div className="app">
+    <div className="app cold">
       <main>
         <div className="container">
             <div className="grid-wrapper">
