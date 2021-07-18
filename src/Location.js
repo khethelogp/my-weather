@@ -21,10 +21,19 @@ const Location = ({city, country, temp, description}) => {
         Clear: "sun",
         Cloud: "cloud",
         Clouds: "clouds",
+        dt: "sun",
+        nt: "moon"
 
     }
 
+    // Checking if its night or day for Location Icon
+    const today = new Date();
+    const currentTime = {
+        hours: today.getHours(),
+        minutes: today.getMinutes() 
+    }
     
+
     switch(description) {
         case "Thunderstorm":
             desc = weatherConditions[description];
@@ -76,9 +85,11 @@ const Location = ({city, country, temp, description}) => {
         break;
         
         default:
-            desc = weatherConditions[description];
+        currentTime.hours > 18 ? desc = "moon" : desc = "sun"; 
+            
     } 
     
+
 
     return (  
         <div className="location">

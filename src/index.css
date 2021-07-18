@@ -36,8 +36,61 @@ body {
   transition: 0.4s ease-out;
 }
 
-.app.cold {
+.app.thunderstorm {
+  background-image: url("./images/thunderstorm.jpg");
+}
+
+.app.rain,
+.app.drizzle {
+  background-image: url("./images/rain.jpg");
+}
+
+.app.snow {
   background-image: url("./images/snow.jpg");
+}
+
+.app.mist {
+  background-image: url("./images/mist.jpg");
+}
+
+.app.smoke {
+  background-image: url("./images/smoke.jpg");
+}
+
+.app.haze {
+  background-image: url("./images/haze.jpg");
+}
+
+.app.dust {
+  background-image: url("./images/dust.jpg");
+}
+
+.app.fog {
+  background-image: url("./images/fog.jpg");
+}
+
+.app.sand {
+  background-image: url("./images/sand.jpg");
+}
+
+.app.ash {
+  background-image: url("./images/ash.jpg");
+}
+
+.app.squall {
+  background-image: url("./images/squall.jpg");
+}
+
+.app.tornado {
+  background-image: url("./images/tornado.jpg");
+}
+
+.app.clear {
+  background-image: url("./images/clear.jpg");
+}
+
+.app.clouds {
+  background-image: url("./images/clouds.jpg");
 }
 
 main {

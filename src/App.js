@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { api } from './config'
 
 import Location from './Location';
 import DailyFocust from './DailyFocust';
+import TodaysCondition from './TodaysCondition';
 
-const api = {
-  key: "ccc62bdb7a2967c2cfdfa36001161aed",
-  base: "https://api.openweathermap.org/data/2.5/"
-}
+
 
 const App = () => {
   const [weather, setWeather] = useState({});
@@ -38,7 +37,7 @@ const App = () => {
 
 
   return (
-    <div className="app cold">
+    <div className="app clear">
       <main>
         <div className="container">
             <div className="grid-wrapper">
@@ -70,7 +69,7 @@ const App = () => {
                 
                 <DailyFocust />
 
-                <div className="todays-condition">
+                {/* <div className="todays-condition">
                     <h2>Today's Weather Condition</h2>
                     <div className="condition">
                         <h4>Humidity</h4>
@@ -112,9 +111,9 @@ const App = () => {
                         <h4>Sunset</h4>
                         <h4>{weather.sys.sunrise}</h4>
                     </div>
-                </div>
+                </div> */}
               
-              {/*  {weather.main && <TodaysCondition 
+              {weather.main && <TodaysCondition 
                     key={weather.weather.id}
                     humidity={weather.main.humidity}
                     feels={weather.main.feels_like}
@@ -126,7 +125,7 @@ const App = () => {
                     pressure={weather.main.pressure}
                     sunrise={weather.sys.sunrise}
                     sunset={weather.sys.sunset}
-                />} */}
+              />}
 
             </div>  
         </div>
