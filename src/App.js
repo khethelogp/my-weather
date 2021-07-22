@@ -6,7 +6,6 @@ import DailyFocust from './DailyFocust';
 import TodaysCondition from './TodaysCondition';
 
 
-
 const App = () => {
   const [weather, setWeather] = useState({});
   const [search, setSearch] = useState('');
@@ -16,12 +15,15 @@ const App = () => {
     getWeather();
   },[query]);
 
+  // fetching daily weather 
   const getWeather = async () => {
     const response = await 
     fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     const data = await response.json();
     setWeather(data);
   };
+
+  //fetch 7 days weather
 
   const updateSearch = e => {
     setSearch(e.target.value);
@@ -33,11 +35,18 @@ const App = () => {
     setSearch('');
   }
   
-
-
+  /* Setting the background Image of the app */
+  function setBackgroundImg(){
+    let desc;
+    if(weather.main){
+      desc = (weather.weather[0].main).toLowerCase();
+    }
+    return desc;
+  }
+  
 
   return (
-    <div className="app clear">
+    <div className={`app ${setBackgroundImg()}`}>
       <main>
         <div className="container">
             <div className="grid-wrapper">
@@ -67,51 +76,11 @@ const App = () => {
                     description={weather.weather[0].main}
                 />}
                 
-                <DailyFocust />
-
-                {/* <div className="todays-condition">
-                    <h2>Today's Weather Condition</h2>
-                    <div className="condition">
-                        <h4>Humidity</h4>
-                        <h4>{weather.main.humidity}%</h4>
-                    </div>
-                    <div className="condition">
-                        <h4>Feels Like</h4>
-                        <h4>{Math.round(weather.main.feels_like)}°C</h4>
-                    </div>
-                    <div className="condition">
-                        <h4>Min Temp</h4>
-                        <h4>{Math.round(weather.main.temp_min)}°C</h4>
-                    </div>
-                    <div className="condition">
-                        <h4>Max Temp</h4>
-                        <h4>{Math.round(weather.main.temp_max)}°C</h4>
-                    </div>
-                    <div className="condition">
-                        <h4>Condition</h4>
-                        <h4>{weather.weather[0].description}</h4>
-                    </div>
-                    <div className="condition">
-                        <h4>Wind Direction</h4>
-                        <h4>{weather.wind.deg}</h4>
-                    </div>
-                        <div className="condition">
-                        <h4>Wind Speed</h4>
-                        <h4>{weather.wind.speed} km/h</h4>
-                    </div>
-                    <div className="condition">
-                        <h4>Pressure</h4>
-                        <h4>{weather.main.pressure}</h4>
-                    </div>
-                    <div className="condition">
-                        <h4>Sunrise</h4>
-                        <h4>{weather.sys.sunrise}</h4>
-                    </div>
-                    <div className="condition">
-                        <h4>Sunset</h4>
-                        <h4>{weather.sys.sunrise}</h4>
-                    </div>
-                </div> */}
+                {weather.main && <DailyFocust 
+                    key={weather.weather.id}
+                    longitude={weather.coord.lon}
+                    latitude={weather.coord.lat}
+                />}
               
               {weather.main && <TodaysCondition 
                     key={weather.weather.id}

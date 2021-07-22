@@ -33,7 +33,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  transition: 0.4s ease-out;
+  transition: 0.5s ease-out background-image;
 }
 
 .app.thunderstorm {
@@ -208,7 +208,7 @@ h4 {
 }
 
 .location .data-icon .bi {
-  font-size: 6rem;
+  font-size: 8rem;
   color: var(--white);
 }
 
@@ -225,6 +225,14 @@ h4 {
   margin-top: 25px;
 
   grid-area: daily-focust;
+}
+
+.daily-focust .day-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: center;
 }
 
 .daily-focust .day {
@@ -295,7 +303,7 @@ h4 {
     font-size: 16px;
   }
 
-  .location .data-icon {
-    font-size: 2rem;
+  .location .data-icon .bi {
+    font-size: 6rem;
   }
 }

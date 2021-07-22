@@ -20,10 +20,7 @@ const Location = ({city, country, temp, description}) => {
         Hurricane: "hurricane",
         Clear: "sun",
         Cloud: "cloud",
-        Clouds: "clouds",
-        dt: "sun",
-        nt: "moon"
-
+        Clouds: "clouds",   
     }
 
     // Checking if its night or day for Location Icon
@@ -85,7 +82,12 @@ const Location = ({city, country, temp, description}) => {
         break;
         
         default:
-        currentTime.hours > 18 ? desc = "moon" : desc = "sun"; 
+        // currentTime.hours > 18 ? desc = "moon" : desc = "sun"; 
+        if (currentTime.hours > 18 ) {
+            desc = "moon" }else { desc = "sun";}
+        if (currentTime.hours < 6) {
+            desc = "moon";
+        }
             
     } 
     
