@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# React Weather APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Demo :eyes:](https://khethelogp.github.io/my-weather/)
+
+Desktop:
+![](https://i.ibb.co/9bKyWvY/my-weather-desktop.png) 
+
+Mobile:
+![](https://i.ibb.co/NYPPzRk/my-weather-mobile.png)
 
 ## Available Scripts
 
