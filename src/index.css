@@ -2,6 +2,7 @@
 
 :root {
   --gray: #707070;
+  --dark-gray: #404040;
   --white: #ffffff;
   --black: #000000;
   --yellow: #f9d71c;
@@ -279,7 +280,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   font-weight: 400;
-  color: var(--gray);
+  color: var(--dark-gray);
   margin: 10px 20px;
   z-index: 1;
   text-transform: capitalize;

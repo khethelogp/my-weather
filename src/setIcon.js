@@ -80,13 +80,7 @@ function setIcon(description){
         break;
         
         default:
-        // currentTime.hours > 18 ? desc = "moon" : desc = "sun"; 
-        /* if (currentTime.hours > 18 ) {
-            desc = "moon" }else { desc = "sun";}
-        if (currentTime.hours < 6) {
-            desc = "moon";
-        }
-             */
+        
         desc = "sun";
     }
     
