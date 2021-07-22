@@ -213,13 +213,10 @@ h4 {
 }
 
 .daily-focust {
-  /* width: 902px;
-  height: 267px; */
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.37);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-direction: row;
   padding: 10px 20px;
   margin-top: 25px;
@@ -230,19 +227,18 @@ h4 {
 .daily-focust .day-list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  text-align: center;
+  justify-content: center;
+  max-width: 100%;
 }
 
-.daily-focust .day {
+.daily-focust .day-list .day {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   text-align: center;
   font-size: 16px;
   margin: 0 5px;
+  padding: 0 15px;
 }
 
 .day h3 {
@@ -289,7 +285,7 @@ h4 {
   text-transform: capitalize;
 }
 
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 860px) {
   .grid-wrapper {
     min-height: 100vh;
     grid-template-areas:
@@ -305,5 +301,9 @@ h4 {
 
   .location .data-icon .bi {
     font-size: 6rem;
+  }
+
+  .daily-focust .day-list .day {
+    padding: 0;
   }
 }
