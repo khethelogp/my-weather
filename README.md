@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# React Weather APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Demo :eyes:](https://khethelogp.github.io/my-weather/)
 
-## Available Scripts
+Screenshots:
+![](https://i.ibb.co/9bKyWvY/my-weather-desktop.png) 
 
-In the project directory, you can run:
+![](https://i.ibb.co/NYPPzRk/my-weather-mobile.png)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The weather application is composed of the following components:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Search-box - Gets City Or Town name from user
 
-### `npm test`
+* Location - Displays weather information for the entered location.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Daily Focust - Displays 7 day Focust from current day
 
-### `npm run build`
+* Todays Weather Condition - Displays all the conditions of today's weather 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Features:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Display current weather
+* Displays 7 days focust
+* Display current weather icon   
+* Displays an Image showcasing the  current weather condition in background
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project also demonstrates:
 
-### `npm run eject`
+* a typcial React project layout structure
+* [OpenWeather API] integration
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Developed With
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* [Visual Studio Code](https://code.visualstudio.com/) - A source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring
+* [React](https://reactjs.org/) - A javascript library for building user interfaces
+* [OpenWeather API] - Provides weather information
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+The following software is required to be installed on your system:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Node 8.x
+* Npm 3.x
 
-### Analyzing the Bundle Size
+Type the following commands in the terminal to verify your node and npm versions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+node -v
+npm -v
+```
 
-### Making a Progressive Web App
+### Install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Follow the following steps to get development environment running.
 
-### Advanced Configuration
+* Clone _'my-weather'_ repository from GitHub
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  ```bash
+  git clone https://github.com/khethelogp/my-weather
+  ```
 
-### Deployment
+   _OR USING SSH_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  ```bash
+  git clone git@github.com:khethelogp/my-weather.git
+  ```
+  * Install node modules
 
-### `npm run build` fails to minify
+   ```bash
+   cd weather-App
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Before continuing, the following steps are required:
+
+1. Get API keys
+
+   * OpenWeather API
+
+     Have a look at [OpenWeather API](http://openweathermap.org/api)
+
+     Get an API key [here](http://openweathermap.org/appid)
+
+### Build
+
+* Build application
+
+  This command will also run ESLint as part of build process.
+
+  ```bash
+  npm run build
+  ```
+
+* Build application and start watching for changes
+
+  This command will also run ESLint as part of build process.
+
+  ```bash
+  npm run build:watch
+  ```
+  ### Run ESlint
+
+* Lint project using ESLint
+
+  ```bash
+  npm run lint
+  ```
+
+* Lint project using ESLint, and autofix
+
+  ```bash
+  npm run lint:fix
+  ```
+  
+### Run
+
+* Run start
+
+  This will run the _'serve'_ npm task
+
+  ```bash
+  npm start
+  ```
+  
+* Alternatively run live-server (simple development http server with live reload capability)
+
+  ```bash
+  npm run serve
+  ```
+
+---
+
+## References
+https://github.com/khethelogp/my-weather
+
+
