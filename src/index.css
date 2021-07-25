@@ -34,63 +34,77 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  transition: 0.5s ease-out background-image;
+  /* transition: 0.3s ease-out background-image; */
 }
 
 .app.thunderstorm {
+  background-image: url("https://i.ibb.co/jvm62xg/thunderstorm.jpg");
   background-image: url("./images/thunderstorm.jpg");
 }
 
 .app.rain,
 .app.drizzle {
+  background-image: url("https://i.ibb.co/MgyyGK8/rain.jpg");
   background-image: url("./images/rain.jpg");
 }
 
 .app.snow {
+  background-image: url("https://i.ibb.co/fq6KK3r/snow.jpg");
   background-image: url("./images/snow.jpg");
 }
 
 .app.mist {
+  background-image: url("https://i.ibb.co/VN1XhdY/mist.jpg");
   background-image: url("./images/mist.jpg");
 }
 
 .app.smoke {
+  background-image: url("https://i.ibb.co/YtxKcfB/smoke.jpg");
   background-image: url("./images/smoke.jpg");
 }
 
 .app.haze {
+  background-image: url("https://i.ibb.co/cgdJFHw/haze.jpg");
   background-image: url("./images/haze.jpg");
 }
 
 .app.dust {
+  background-image: url("https://i.ibb.co/4Zvbw8C/dust.jpg");
   background-image: url("./images/dust.jpg");
 }
 
 .app.fog {
+  background-image: url("https://i.ibb.co/dcpGpR3/fog.jpg");
   background-image: url("./images/fog.jpg");
 }
 
 .app.sand {
+  background-image: url("https://i.ibb.co/cyBHv7t/sand.jpg");
   background-image: url("./images/sand.jpg");
 }
 
 .app.ash {
+  background-image: url("https://i.ibb.co/tZpt996/ash.jpg");
   background-image: url("./images/ash.jpg");
 }
 
 .app.squall {
+  background-image: url("https://i.ibb.co/v1XBCfw/squall.jpg");
   background-image: url("./images/squall.jpg");
 }
 
 .app.tornado {
+  background-image: url("https://i.ibb.co/D86201T/tornado.jpg");
   background-image: url("./images/tornado.jpg");
 }
 
 .app.clear {
+  background-image: url("https://i.ibb.co/f8SBBtk/clear.jpg");
   background-image: url("./images/clear.jpg");
 }
 
 .app.clouds {
+  background-image: url("https://i.ibb.co/Pgb5cF7/clouds.jpg");
   background-image: url("./images/clouds.jpg");
 }
 
@@ -298,6 +312,10 @@ h4 {
 
   .location .data {
     font-size: 16px;
+  }
+
+  .location .data h1 {
+    font-size: 24px;
   }
 
   .location .data-icon .bi {

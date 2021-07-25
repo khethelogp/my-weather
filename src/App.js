@@ -37,7 +37,7 @@ const App = () => {
   
   /* Setting the background Image of the app */
   function setBackgroundImg(){
-    let desc;
+    let desc = "";
     if(weather.main){
       desc = (weather.weather[0].main).toLowerCase();
     }

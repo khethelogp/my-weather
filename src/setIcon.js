@@ -23,11 +23,12 @@ function setIcon(description){
     }
 
      // Checking if its night or day for Location Icon
+    /* 
     const today = new Date();
     const currentTime = {
         hours: today.getHours(),
         minutes: today.getMinutes() 
-    }
+    } */
 
     switch(description) {
         case "Thunderstorm":
