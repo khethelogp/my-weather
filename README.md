@@ -77,7 +77,7 @@ Follow the following steps to get development environment running.
   * Install node modules
 
    ```bash
-   cd weather-App
+   cd my-weather
    npm install
    ```
 
@@ -110,18 +110,6 @@ Before continuing, the following steps are required:
   ```
   ### Run ESlint
 
-* Lint project using ESLint
-
-  ```bash
-  npm run lint
-  ```
-
-* Lint project using ESLint, and autofix
-
-  ```bash
-  npm run lint:fix
-  ```
-  
 ### Run
 
 * Run start
