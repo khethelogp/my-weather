@@ -131,4 +131,6 @@ Before continuing, the following steps are required:
 ## References
 https://github.com/khethelogp/my-weather
 
+Made with :heart: by KhetheloGP
+
 
