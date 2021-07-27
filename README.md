@@ -1,4 +1,4 @@
-#  React Weather APP
+# ⛅ React Weather APP
 
 [Live Demo :eyes:](https://khethelogp.github.io/my-weather/)
 
