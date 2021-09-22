@@ -9,11 +9,12 @@ const Daylist = ({ days }) => {
 
         return dayname.slice(0,3);
     }
+ 
 
     return ( 
         <div className="day-list">
-            {days.map((day) => (
-                    <div className="day">
+            {days.map((day,index) => (
+                    <div className="day" key={index}>
                     <h3>{setDay(day)}</h3>
                     <i className={`bi bi-${setIcon(day.weather[0].main)}`}></i>
                     <p>{Math.round(day.temp.max)}° <small>{Math.round(day.temp.min)}°</small></p>

@@ -23,7 +23,6 @@ const DailyFocust = ({ longitude, latitude }) => {
         setDays(data.daily);
     };
 
-
     return ( 
             <div className="daily-focust">
                 {days && <Daylist days={days}/>}

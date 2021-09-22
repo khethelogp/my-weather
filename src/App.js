@@ -10,17 +10,33 @@ const App = () => {
   const [weather, setWeather] = useState({});
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('Pretoria');
+  const [isPending, setIsPending] = useState(true); 
+  const [rError, setRError] = useState(null);
 
   useEffect(()=>{
-    getWeather();
+    setTimeout(() => {
+      getWeather();
+    },1000);
+
   },[query]);
 
   // fetching daily weather 
   const getWeather = async () => {
-    const response = await 
-    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-    const data = await response.json();
-    setWeather(data);
+    try {
+      const response = await 
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)      
+      if(!response.ok) {
+        throw Error('Oops, could not fetch the data for that resource!');  
+      }else{
+        const data = await response.json();
+        setWeather(data);  
+        setIsPending(false);
+        setRError(null);
+      }
+    } catch (error) {
+      setIsPending(false);
+      setRError(error.message);
+    }
   };
 
   //fetch 7 days weather
@@ -33,6 +49,7 @@ const App = () => {
     e.preventDefault();
     setQuery(search);
     setSearch('');
+    setIsPending(true);
   }
   
   /* Setting the background Image of the app */
@@ -68,6 +85,10 @@ const App = () => {
                   </form>
                 </div>
 
+                {rError && <div className="rError">{ rError } </div> }
+
+                {isPending && <div className="pending"><h3>Loading...</h3></div>}
+                
                 {weather.main && <Location 
                     key={weather.weather.id}
                     city={weather.name}

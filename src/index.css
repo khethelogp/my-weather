@@ -140,6 +140,7 @@ main {
     "daily-focust daily-focust todays-condition ";
 
   padding: 10px;
+  position: relative;
 }
 
 .searchBar {
@@ -300,6 +301,33 @@ h4 {
   text-transform: capitalize;
 }
 
+.pending {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 200px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  position: absolute;
+  top: 18%;
+  left: 30%;
+}
+
+.rError {
+  border-radius: 2px;
+  background-color: rgba(255, 0, 0, 0.788);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 25px;
+  width: 200px;
+  position: absolute;
+  top: 18%;
+  left: 30%;
+}
+
 @media screen and (max-width: 860px) {
   .grid-wrapper {
     min-height: 100vh;
@@ -324,5 +352,15 @@ h4 {
 
   .daily-focust .day-list .day {
     padding: 0;
+  }
+
+  .pending {
+    top: 0;
+    left: 8rem;
+  }
+
+  .rError {
+    top: 10%;
+    left: 8rem;
   }
 }
